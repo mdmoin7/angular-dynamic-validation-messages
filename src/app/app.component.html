@@ -1,0 +1,11 @@
+<h1>Template Forms</h1>
+<form>
+<input type="text" name="name" ngModel required #nameRef="ngModel" minlength="5"/>
+<app-show-errors [ctrl]="nameRef"></app-show-errors>
+</form>
+
+<h1>Reactive Forms</h1>
+<form [formGroup]="demoForm">
+<input type="text" formControlName="name"/>
+<app-show-errors [ctrl]="demoForm.get('name')"></app-show-errors>
+</form>
